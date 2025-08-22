@@ -2,22 +2,6 @@
 
 /*
 
-Habilita o pino (GPIO_ENABLE_REG).
-    GPIO_ENABLE_REG  0x3FF44020 - precisa escrever no bit 2 do registrador
-
-Roteia a função desejada para o pino (GPIO_FUNCx_OUT_SEL_CFG_REG).
-    GPIO_FUNC2_OUT_SEL_CFG_REG Peripheral output selection for GPIO 2 0x3FF44538 R/W
-    To configure a pin as simple GPIO output, the GPIO Matrix GPIO_FUNCx_OUT_SEL register is configured with a
-    special peripheral index value (0x100).
-
-Controla o valor de saída (GPIO_OUT_W1TS_REG / GPIO_OUT_W1TC_REG).
-    GPIO_OUT_W1TS_REG 0x3FF44008 bit 2 to 1 para setar
-    GPIO_OUT_W1TC_REG 0x3FF4400C bit 2 to 1 para limpar
-
-
-GPIO:  0x3FF4_4000 - 0x3FF4_4FFF
-GPIO_OUT_REG GPIO 0-31 output register 0x3FF44004
-
 uint32_t *GPIO_ENABLE_REG = (uint32_t*)0x3FF44020;
 uint32_t *GPIO_FUNC2_OUT_SEL_CFG_REG = (uint32_t*)0x3FF44538;
 uint32_t *GPIO_OUT_W1TS_REG = (uint32_t*)0x3FF44008;
